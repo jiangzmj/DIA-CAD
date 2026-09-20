@@ -60,7 +60,7 @@ Per-task files (`data/quality_per_case/`, `data/usage/`) still use older prefixe
 
 **Performance gains versus additional inference cost across task difficulty**
 
-![Performance gains versus additional inference cost across task difficulty](images/figure_cost/figure5_difficulty_tradeoff_relative_1x4.png)
+![Performance gains versus additional inference cost across task difficulty](images/figure_cost/figure5_difficulty_tradeoff_relative_2x2.png)
 
 **Representative CAD editing cases**
 
