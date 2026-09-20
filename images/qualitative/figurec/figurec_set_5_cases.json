@@ -1,0 +1,57 @@
+[
+  {
+    "case_id": "easy_001",
+    "view": "z_corner",
+    "edit_request": "Mirror the part according to the plane lying on the not rounded end of the part. Merge the mirrored part together with the existing one so they create one body.",
+    "scores": {
+      "neuralcad": 0.998266,
+      "visual": 0.998266,
+      "harness": 0.998303,
+      "dia": 0.998303
+    }
+  },
+  {
+    "case_id": "medium_005",
+    "view": "x_corner",
+    "edit_request": "Insert screws to both holes to be able to fix tool on the table",
+    "scores": {
+      "neuralcad": 0.339683,
+      "visual": 0.230626,
+      "harness": 0.398319,
+      "dia": 0.730331
+    }
+  },
+  {
+    "case_id": "hard_010",
+    "view": "back",
+    "edit_request": "Add rectangular openining to the lower back of the coffee machine, which might serve as draft location for plug and main ON/OFF switch. Opening should be 20cm x 10cm and 3cm deep rectangle with roundend corners (radius 1cm). Position should be more or less equally distanced from bottom and sides of the device.",
+    "scores": {
+      "neuralcad": 0.0,
+      "visual": 0.0,
+      "harness": 0.0,
+      "dia": 0.834796
+    }
+  },
+  {
+    "case_id": "hard_005",
+    "view": "z_corner",
+    "edit_request": "Design a fixation rod mounted from the top with arm length 200mm to have ability to fix cutting product",
+    "scores": {
+      "neuralcad": 0.0,
+      "visual": 0.145276,
+      "harness": 0.0,
+      "dia": 0.366314
+    }
+  },
+  {
+    "case_id": "hard_001",
+    "view": "z_corner",
+    "edit_request": "Multiply amount of cylindrical feature to 4. Imagine this is a system of plant pots, so you need to add stability to that afterwards by adding another legs or ribs on the sides.",
+    "scores": {
+      "neuralcad": 0.291358,
+      "visual": 0.260412,
+      "harness": 0.291688,
+      "dia": 0.398798
+    }
+  }
+]

@@ -1,0 +1,8 @@
+openai>=1.0.0
+python-dotenv>=1.0.0
+httpx>=0.27.0
+pyyaml>=6.0
+Pillow>=10.0.0
+numpy>=1.24.0
+cadquery>=2.4.0
+vtk>=9.2.0

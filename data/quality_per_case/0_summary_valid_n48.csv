@@ -1,0 +1,5 @@
+rank,condition,valid_generated,chamfer,volume_f1,diff_f1,iou
+1,neuralCAD-Edit (baseline),39/48,0.792672,0.721136,0.325659,0.689312
+2,Visual Target Only,43/48,0.873618,0.796359,0.320696,0.760698
+3,Harness Only,42/48,0.858922,0.808006,0.328472,0.777137
+4,DIA-CAD (ours),46/48,0.942394,0.885214,0.354244,0.854180

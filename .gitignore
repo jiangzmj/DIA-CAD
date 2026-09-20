@@ -1,0 +1,18 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.env
+auth.json
+*.auth.json
+.DS_Store
+Thumbs.db
+.ipynb_checkpoints/
+
+# Competition inputs and runtime products (not part of this package)
+input/
+artifacts/
+workspace/artifacts/
+workspace/sessions/
+feature_probe_cache/

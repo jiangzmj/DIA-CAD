@@ -1,0 +1,37 @@
+condition,difficulty,metric,n,n_invalid,mean,ci95_lo,ci95_hi,median
+Benchmark Baseline,Easy,chamfer,16,3,0.804440,0.591757,1.017122,0.989159
+Benchmark Baseline,Easy,volume_f1,16,3,0.784486,0.574564,0.994409,0.989572
+Benchmark Baseline,Easy,diff_f1,16,3,0.445433,0.210178,0.680689,0.362614
+Benchmark Baseline,Medium,chamfer,16,3,0.792573,0.582152,1.002993,0.985240
+Benchmark Baseline,Medium,volume_f1,16,3,0.691063,0.465415,0.916711,0.972272
+Benchmark Baseline,Medium,diff_f1,16,3,0.259980,0.058807,0.461152,0.016597
+Benchmark Baseline,Hard,chamfer,16,3,0.781004,0.571380,0.990628,0.984528
+Benchmark Baseline,Hard,volume_f1,16,3,0.687858,0.466190,0.909525,0.891800
+Benchmark Baseline,Hard,diff_f1,16,3,0.271563,0.095011,0.448114,0.097875
+Visual Target Only,Easy,chamfer,16,2,0.866159,0.685979,1.046339,0.989209
+Visual Target Only,Easy,volume_f1,16,2,0.846931,0.667414,1.026447,0.995748
+Visual Target Only,Easy,diff_f1,16,2,0.485544,0.249884,0.721205,0.547320
+Visual Target Only,Medium,chamfer,16,2,0.847946,0.669332,1.026560,0.987556
+Visual Target Only,Medium,volume_f1,16,2,0.742033,0.542017,0.942049,0.968326
+Visual Target Only,Medium,diff_f1,16,2,0.198469,0.039689,0.357248,0.060761
+Visual Target Only,Hard,chamfer,16,1,0.906750,0.773016,1.040485,0.985045
+Visual Target Only,Hard,volume_f1,16,1,0.800113,0.622210,0.978016,0.982714
+Visual Target Only,Hard,diff_f1,16,1,0.278073,0.122532,0.433615,0.202844
+Harness Only,Easy,chamfer,16,3,0.804255,0.591621,1.016889,0.989255
+Harness Only,Easy,volume_f1,16,3,0.788105,0.577390,0.998821,0.997450
+Harness Only,Easy,diff_f1,16,3,0.461869,0.217829,0.705910,0.363132
+Harness Only,Medium,chamfer,16,0,0.976158,0.949420,1.002895,0.988435
+Harness Only,Medium,volume_f1,16,0,0.924700,0.820704,1.028696,0.992839
+Harness Only,Medium,diff_f1,16,0,0.341065,0.149276,0.532853,0.191067
+Harness Only,Hard,chamfer,16,3,0.796354,0.585631,1.007077,0.983988
+Harness Only,Hard,volume_f1,16,3,0.711214,0.502143,0.920286,0.912593
+Harness Only,Hard,diff_f1,16,3,0.182481,0.052581,0.312381,0.054060
+DIA-CAD,Easy,chamfer,16,1,0.927714,0.795870,1.059558,0.989206
+DIA-CAD,Easy,volume_f1,16,1,0.909570,0.776039,1.043101,0.997103
+DIA-CAD,Easy,diff_f1,16,1,0.445686,0.209529,0.681842,0.396839
+DIA-CAD,Medium,chamfer,16,0,0.976378,0.954056,0.998700,0.987387
+DIA-CAD,Medium,volume_f1,16,0,0.874138,0.735144,1.013131,0.982041
+DIA-CAD,Medium,diff_f1,16,0,0.307847,0.105578,0.510116,0.057271
+DIA-CAD,Hard,chamfer,16,1,0.923089,0.791805,1.054373,0.986299
+DIA-CAD,Hard,volume_f1,16,1,0.871935,0.731547,1.012324,0.986130
+DIA-CAD,Hard,diff_f1,16,1,0.309199,0.120816,0.497582,0.225176

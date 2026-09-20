@@ -1,0 +1,103 @@
+provider:
+  primary: chatgpt_oauth          # chatgpt_oauth | openai_compat
+  fallback: chatgpt_oauth
+  model: gpt-5.6                  # openai_compat only
+  chatgpt_model: gpt-5.6-sol      # Codex ChatGPT OAuth (use -sol/-terra/-luna, not bare gpt-5.6)
+  chatgpt_reasoning_effort: medium  # low | medium | high | xhigh | max | ultra
+
+# Follow the host network configuration on every request rather than pinning it
+# at process start. Set network.proxy only to force one HTTP proxy URL.
+network:
+  proxy: null
+  auto_detect_proxy: true
+
+agent:
+  max_tool_iterations: 25
+  max_depth: 2                    # spawn nesting limit
+  max_child_turns: 20
+
+context:
+  max_messages: 80
+  max_tool_chars: 20000
+  compact_keep_recent: 0.2
+  compact_summarize_oldest: 0.5
+  handoff_default: summary        # none | summary | window | full
+  handoff_window: 12
+  system_layers:
+    - identity
+    - soul
+    - tools
+    - runtime
+
+tools:
+  http_request:
+    timeout_seconds: 30
+    max_response_chars: 50000
+    allow_private_hosts: false
+  max_bash_output_chars: 50000
+
+workspace: workspace
+
+# CAD edit pipeline.
+# Inputs: single = input/input.step + description.txt
+#         batch = input/01/…, input/16/… each with input.step + description.txt
+#                 → PYTHONPATH=src python -m harness.pipeline --batch
+# stub_media:false → ChatGPT OAuth multimodal; true → offline stubs.
+pipeline:
+  artifacts_root: artifacts
+  input_dir: input
+  default_input: input/input.step
+  default_description: input/description.txt
+  stub_media: false
+  s1_max_retries: 4
+  s3_max_retries: 2
+  result_qc_max_retries: 5   # 5 QC attempts total (initial + 4 CadQuery rewrites)
+  result_qc_exec_retries: 1  # each rewrite may retry exec once on runtime error
+  prompts_dir: null                  # default: workspace/prompts/cad_edit
+  cad_views:
+    max_retries: 6
+    size: 1024
+  # S2+ is a state-driven harness (not a fixed JSON→code→QC loop).
+  # All six images (4 CAD views + 2 targets) use known orthographic cameras.
+  use_edit_harness: true
+  # Deterministic STEP facts are always produced with OCP. Palmetto is an
+  # optional native sidecar; set PALMETTO_ENGINE_PATH or this path after build.
+  feature_probe:
+    enabled: true
+    cache_dir: feature_probe_cache
+    palmetto_enabled: true
+    palmetto_engine_path: ""
+    palmetto_timeout_seconds: 120
+  harness:
+    max_edit_rounds: 5
+    max_code_repairs: 3
+    max_mllm_calls: 12
+    # The MLLM may inspect up to 3 additional known-camera batches.
+    max_view_searches: 3
+    max_views_per_search: 3
+    # S2 text-only conversation memory. Images are attached only on the current turn.
+    memory_max_messages: 8
+    memory_max_chars: 24000
+    memory_summary_chars: 6000
+    exec_timeout_seconds: 120
+    # Empirical starting points; recalibrate for a different dataset or renderer.
+    # GPT-generated targets use cross-renderer IoU.
+    thresholds_are_placeholders: false
+    calibrated_on: competition_validation_set
+    silhouette_iou_min: 0.55
+    silhouette_iou_floor: 0.40
+    cross_renderer_iou_min: 0.28
+    cross_renderer_iou_floor: 0.15
+    preservation_bbox_rel_tol: 0.50
+    preservation_bbox_rel_tol_replace: 1.20
+    volume_explode_ratio: 8.0
+    volume_explode_ratio_global: 12.0
+    wrecked_iou_min: 0.25
+    view_alignment_min: 0.40
+    # Region IoU: additive/subtractive FINISH uses needed vs did-change, not whole-image silhouette.
+    region_change_iou_min: 0.12
+    region_edge_iou_min: 0.12
+    region_mask_max_frac: 0.25
+    region_mask_min_frac: 0.001
+    noop_silhouette_iou_min: 0.997
+    noop_pixel_mae_max: 0.008
