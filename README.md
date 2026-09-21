@@ -1,8 +1,8 @@
 # DIA-CAD
 
-Intent-aware CAD editing: predicted visual targets, explicit design intent, and a state-driven CadQuery harness.
+Design-Intent-Aware CAD editing: predicted visual targets, explicit design intent, and a state-driven CadQuery harness.
 
-This repository contains **the DIA-CAD implementation** and **48-task results** for all four paper conditions. It does **not** include the other three methods’ code, the competition STEP files, or predicted meshes.
+This repository contains **the DIA-CAD implementation** and **48-task results** for all four paper conditions. 
 
 ## What DIA-CAD does
 
